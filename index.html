@@ -4,40 +4,37 @@
 		<meta charset="utf-8">
 		<title>Pomodoro Timer</title>
 
-				<!-- Latest compiled and minified CSS -->
+		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!--My CSS file -->
 		<link href="StyleSheet.css" rel="stylesheet" type="text/css">
+		<!--digital clock style font -->
+		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 		<link rel="icon" href="clockIcon.png">
 	</head>
 	
 
 	<body>
-		<!-- NOTES: container is fixed width, -fluid is full width -->
 		<div id="mainBox" class="container">
 			<h1 id="title"> Pomodoro Timer </h1>
 			<div class="row">
 				<div class="col-md-2 text-left">
-					
 				</div>
 				<div class="col-md-8 text-center">
-				
 					<p id="countdownDisplay">25:00</p>
-					<button id="startStop" type="button" class="btn btn-primary btn-lg btn-block">START / STOP</button>
+					<button id="startStop" type="button" class="btn btn-primary btn-lg btn-block" >START / STOP</button>
 					<button id="reset" type="button" class="btn btn-primary btn-lg btn-block">RESET</button>
 				</div>
-				<div class="col-md-2 text-right">
-					
+				<div class="col-md-2 text-right">		
 				</div>
 			</div> <!-- end row -->
 			
 			<!-- initially hidden snackbar that shows up when a pomodoro round is over -->
 			<div id="snackbar">Timer round over!</div>
 			<!-- audio here -->
-			<span id="audio"></span>
-			
+			<span id="audio"></span>	
 		</div> <!-- end container -->
 		
 		<!-- hook up the jquery -->
