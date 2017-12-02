@@ -81,7 +81,7 @@ function timer() {
 		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 		
 		//Sound effect to play when a pomodoro round is over.
-		$('#audio').html('<audio autoplay><source src="clock-alarm2.WAV"></audio>');
+		$('#audio').html('<audio autoplay><source src="http://www.wavlist.com/soundfx/020/clock-alarm2.wav"></audio>');
 	}		
 	totalTime = minutes + ':' + seconds;
     document.getElementById("countdownDisplay").innerHTML = totalTime;
