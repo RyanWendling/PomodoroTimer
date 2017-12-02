@@ -5,9 +5,9 @@ var timer;
 // Time that we display to the user.
 var totalTime;
 // Use the following three variables to measure how long the current countdown lasts (25 min, 4 min, and 15 min).
-var pomoTime = 1500;
-var shortBreakTime = 240;
-var longBreakTime = 900;
+var pomoTime = 15;
+var shortBreakTime = 2;
+var longBreakTime = 9;
 var counter;
 // Current leftover time, initially 25.
 var countRemainder = pomoTime;
