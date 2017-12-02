@@ -8,18 +8,15 @@ var totalTime;
 var pomoTime = 1500;
 var shortBreakTime = 240;
 var longBreakTime = 900;
-// var pomoTime = 15;
-// var shortBreakTime = 12;
-// var longBreakTime = 19;
-// get remaining time left on current countdown duration. DELETE 
-var count = document.getElementById("countdownDisplay");
 var counter;
 // current leftover time, initially 25
 var countRemainder = pomoTime;
 // boolean to start and stop our timer
 var running = false;
-// flag so we know what to set our countRemainder to.
+// flag so we know what to set our next countRemainder to.
 var chain = 1;
+// Used to add the timer to our websites title tab.
+var curTitle = document.title;
 
 
 // Start/Stop button event listener that calls function to control timer flow.
@@ -39,6 +36,7 @@ document.getElementById("reset").addEventListener("click", function(){
     seconds = addZeros(countRemainder % 60);
 	totalTime = minutes + ':' + seconds;
     document.getElementById("countdownDisplay").innerHTML = totalTime;
+	document.title = curTitle + "  " + totalTime;
 });
 
 
@@ -92,6 +90,7 @@ function timer() {
 	//}
 	totalTime = minutes + ':' + seconds;
     document.getElementById("countdownDisplay").innerHTML = totalTime;
+	document.title = curTitle + "  " + totalTime;
 }
 
 
