@@ -1,21 +1,21 @@
-// minutes and seconds track the current time values remaining.
+// Minutes and seconds track the current time values remaining.
 var minutes;
 var seconds;
 var timer;
-// time that we display to the user.
+// Time that we display to the user.
 var totalTime;
-// use the following three variables to measure how long the current countdown lasts.
+// Use the following three variables to measure how long the current countdown lasts (25 min, 4 min, and 15 min).
 var pomoTime = 1500;
 var shortBreakTime = 240;
 var longBreakTime = 900;
 var counter;
-// current leftover time, initially 25
+// Current leftover time, initially 25.
 var countRemainder = pomoTime;
-// boolean to start and stop our timer
+// Boolean to start and stop our timer.
 var running = false;
-// flag so we know what to set our next countRemainder to.
+// Flag so we know what to set our next countRemainder to.
 var chain = 1;
-// Used to add the timer to our websites title tab.
+// Used to add the timer to our website's title tab.
 var curTitle = document.title;
 
 
@@ -56,8 +56,7 @@ function timer() {
 	minutes = addZeros(Math.floor(countRemainder / 60));
     seconds = addZeros(countRemainder % 60);
 	
-	/* if countRemainder == 0, we reset our time according to our level.
-	Also changes the new countRemainder value based off of where we are in our pomodoro chain. */
+	// if countRemainder == 0, sets the new countRemainder value based off of where we are in our pomodoro chain. 
 	if (countRemainder == 0){
 
 		if (chain == 7) {
@@ -71,7 +70,7 @@ function timer() {
 			chain++;
 		}
 		
-		/*Snackbar alert logic from W3Schools! */
+		// Snackbar alert logic from W3Schools! 
 		// Get the snackbar DIV
 		var x = document.getElementById("snackbar")
 
@@ -81,13 +80,9 @@ function timer() {
 		// After 3 seconds, remove the show class from DIV
 		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 		
-		//Sound effect
+		//Sound effect to play when a pomodoro round is over.
 		$('#audio').html('<audio autoplay><source src="clock-alarm2.WAV"></audio>');
 	}		
-	//if (countRemainder < 0) {
-		
-		//return;
-	//}
 	totalTime = minutes + ':' + seconds;
     document.getElementById("countdownDisplay").innerHTML = totalTime;
 	document.title = curTitle + "  " + totalTime;
@@ -105,7 +100,7 @@ function stopStart() {
 	// start the counter/interval again with our current countRemainder value.
 	} else {
 		
-		// counter is our setInterval object, this will cause the timer to start
+		// Counter is our setInterval object. This will cause the timer to start.
 		counter = setInterval(timer, 1000);
 		running = true;
 	}
